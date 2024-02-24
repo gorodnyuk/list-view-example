@@ -29,9 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
         listView.setOnItemClickListener((adapterView, view, i, l) -> {
             Intent intent = new Intent(MainActivity.this, PersonDetailsActivity.class);
-            //todo person make serializable
-            intent.putExtra("id", persons.get(i).getId().toString());
-            intent.putExtra("name", persons.get(i).getName());
+            intent.putExtra("person", persons.get(i));
             startActivity(intent);
         });
     }

@@ -6,6 +6,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import ru.gorodnyuk.personlistview.dto.Person;
+
 public class PersonDetailsActivity extends AppCompatActivity {
 
     @Override
@@ -17,8 +19,9 @@ public class PersonDetailsActivity extends AppCompatActivity {
         TextView personNameTextView = findViewById(R.id.detailsPersonName);
 
         Intent intent = getIntent();
+        Person person = (Person) intent.getSerializableExtra("person");
 
-        personIdTextView.setText(intent.getStringExtra("id"));
-        personNameTextView.setText(intent.getStringExtra("name"));
+        personIdTextView.setText(person.getId().toString());
+        personNameTextView.setText(person.getName());
     }
 }

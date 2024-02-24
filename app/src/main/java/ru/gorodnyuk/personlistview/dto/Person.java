@@ -1,8 +1,9 @@
 package ru.gorodnyuk.personlistview.dto;
 
+import java.io.Serializable;
 import java.util.UUID;
 
-public class Person {
+public class Person implements Serializable {
     private UUID id;
     private String name;
 
